@@ -1,0 +1,41 @@
+{
+  "name": "note-taking-app",
+  "version": "1.0.0",
+  "description": "api server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "cd client && npm run start",
+    "client-install": "cd client && npm install",
+    "server-install": "npm install",
+    "install-all": "concurrently \"npm run client-install\" \"npm run server-install\" ",
+    "dev": "concurrently \"npm run client\" \"npm run server\" ",
+    "Netlify-postbuild": "cd client && npm install && npm run build"
+  },
+  "keywords": [],
+  "author": "Parthasarathy",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "3.6",
+    "mongoose": "^8.2.0",
+    "react-router-dom": "^6.22.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parthasarathy27/Notes-Taking-App.git"
+  },
+  "bugs": {
+    "url": "https://github.com/parthasarathy27/Notes-Taking-App/issues"
+  },
+  "homepage": "https://github.com/parthasarathy27/Notes-Taking-App#readme"
+}
