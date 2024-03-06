@@ -1,81 +1,79 @@
-# Getting Started with Create React App
+# Note-Taking App - MERN Stack
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This Note-Taking App is a simple web application built using the MERN stack (MongoDB, Express.js, React, Node.js). The primary goal of the application is to allow users to create, edit, and delete notes. Additionally, basic user authentication has been implemented to enable users to save and access their own notes securely.
 
-In the project directory, you can run:
+## Features
 
-### npm start
+- **User Authentication:** Secure user authentication ensures that each user has a private space for their notes.
+- **Create Notes:** Users can easily create new notes with a title and content.
+- **Edit Notes:** Users have the ability to edit their existing notes, providing a seamless editing experience.
+- **Delete Notes:** Unwanted notes can be easily deleted, maintaining a clutter-free workspace.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **MongoDB:** For storing and managing the notes data.
+- **Express.js:** As the backend framework to handle server-side operations.
+- **React:** For building a dynamic and responsive user interface.
+- **Node.js:** To run the server and handle server-side logic.
 
-### npm test
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Follow these steps to set up and run the Note-Taking App locally:
 
-### npm run build
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/your-username/note-taking-app.git
+   cd note-taking-app
+   ```
 
-Builds the app for production to the build folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Install Dependencies:**
+   ```bash
+   # Install server dependencies
+   cd server
+   npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   # Install client dependencies
+   cd ../client
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Configure Environment Variables:**
+   Create a `.env` file in the `server` directory and set the following variables:
+   ```env
+   PORT=3001
+   MONGO_URI=your_mongodb_connection_string
+   ```
 
-### npm run eject
+4. **Run the Application:**
+   ```bash
+   # Start the server (from the server directory)
+   npm start
 
-Note: this is a one-way operation. Once you eject, you can't go back!
+   # Start the client (from the client directory)
+   npm start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can eject at any time. This command will remove the single build dependency from your project.
+5. **Open in Browser:**
+   Visit [http://localhost:3000](http://localhost:3000) in your web browser to access the Note-Taking App.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except eject will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Screenshots
 
-You don't have to ever use eject. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Login/Register
+![Login Page](https://github.com/parthasarathy27/Notes-Taking-App/assets/83574852/f11dfa2b-59f3-4f9b-8e80-8bab3dc90c9e)
 
-## Output
-![Screenshot (55)](https://github.com/parthasarathy27/Notes-Taking-App/assets/83574852/f11dfa2b-59f3-4f9b-8e80-8bab3dc90c9e)
+![Register Page](https://github.com/parthasarathy27/Notes-Taking-App/assets/83574852/65f0022f-72ea-4322-a92a-a467ef01d177)
 
-![Screenshot (56)](https://github.com/parthasarathy27/Notes-Taking-App/assets/83574852/65f0022f-72ea-4322-a92a-a467ef01d177)
+### Home Page
+![Home Page](https://github.com/parthasarathy27/Notes-Taking-App/assets/83574852/c96264ee-a8ff-420e-94ca-19d1ab036818)
 
-![Screenshot (57)](https://github.com/parthasarathy27/Notes-Taking-App/assets/83574852/c96264ee-a8ff-420e-94ca-19d1ab036818)
+### Create Note
+![Create Note](https://github.com/parthasarathy27/Notes-Taking-App/assets/83574852/fdd9a445-26f7-4391-bd1d-52c9fdb336cf)
 
-![Screenshot (58)](https://github.com/parthasarathy27/Notes-Taking-App/assets/83574852/fdd9a445-26f7-4391-bd1d-52c9fdb336cf)
+### Edit Note
+![Edit Note](https://github.com/parthasarathy27/Notes-Taking-App/assets/83574852/0ed6444f-d092-47d1-aa48-2a233e654610)
 
-![Screenshot (59)](https://github.com/parthasarathy27/Notes-Taking-App/assets/83574852/0ed6444f-d092-47d1-aa48-2a233e654610)
+## Contributing
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### npm run build fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you'd like to contribute to this project, please follow the [contribution guidelines](CONTRIBUTING.md).
