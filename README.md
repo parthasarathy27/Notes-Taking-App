@@ -1,4 +1,4 @@
-# Note-Taking App - MERN Stack
+# Note-Taking-App - MERN Stack
 
 ## Overview
 
