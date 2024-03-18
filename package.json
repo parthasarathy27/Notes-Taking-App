@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "build": "cd client && npm install && npm run build", // Added "build" script
     "server": "nodemon server.js",
     "client": "cd client && npm run start",
     "client-install": "cd client && npm install",
@@ -37,5 +38,8 @@
   "bugs": {
     "url": "https://github.com/parthasarathy27/Notes-Taking-App/issues"
   },
-  "homepage": "https://github.com/parthasarathy27/Notes-Taking-App#readme"
+  "homepage": "https://github.com/parthasarathy27/Notes-Taking-App#readme",
+  "engines": {
+    "node": ">=14.0.0" // Example Node.js version requirement
+  }
 }
