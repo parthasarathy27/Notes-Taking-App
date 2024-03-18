@@ -9,10 +9,9 @@
     "client": "cd client && npm run start",
     "client-install": "cd client && npm install",
     "server-install": "npm install",
-    "install-all": "concurrently \"npm run client-install\" \"npm run server-install\"",
-    "dev": "concurrently \"npm run client\" \"npm run server\"",
-    "postbuild": "cd client && npm install && npm run build",
-    "deploy": "npm run postbuild && git add . && git commit -m 'Deploy to GitHub Pages' && git push origin master"
+    "install-all": "concurrently \"npm run client-install\" \"npm run server-install\" ",
+    "dev": "concurrently \"npm run client\" \"npm run server\" ",
+    "postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "Parthasarathy",
@@ -38,11 +37,5 @@
   "bugs": {
     "url": "https://github.com/parthasarathy27/Notes-Taking-App/issues"
   },
-  "homepage": "https://parthasarathy27.github.io/Notes-Taking-App/",
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "homepage": "https://github.com/parthasarathy27/Notes-Taking-App#readme"
 }
