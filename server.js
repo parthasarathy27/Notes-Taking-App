@@ -23,20 +23,21 @@ mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true })
   })
   .catch((err) => {
     console.error('Error connecting to MongoDB:', err);
+    process.exit(1); // Exit the process if unable to connect to MongoDB
   });
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
-  app.use(express.static('client/build'));
+  app.use(express.static(path.join(__dirname, 'client/build')));
 
   // Serve index.html for any other routes
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
   });
 }
 
-// Error handling for unmatched routes
+// Handle 404 errors
 app.use((req, res, next) => {
   res.status(404).send("Sorry, can't find that!");
 });
