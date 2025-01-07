@@ -2,25 +2,25 @@
   "version": 2,
   "builds": [
     {
-      "src": "client/package.json",            // Points to the React frontend
-      "use": "@vercel/static-build",            // Uses the static build for React
+      "src": "client/package.json",  // React frontend
+      "use": "@vercel/static-build",  // Use static build for React
       "config": {
-        "distDir": "client/build"              // Specifies the build directory for React
+        "distDir": "client/build"    // Build output for React
       }
     },
     {
-      "src": "server.js",                      // Points to the Express server
-      "use": "@vercel/node"                    // Uses the Node.js serverless function
+      "src": "server.js",  // Express server
+      "use": "@vercel/node" // Use Node.js serverless function
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",                      // Matches all API routes (e.g., /api/notes)
-      "dest": "/server.js"                     // Directs API routes to the serverless function (Node.js)
+      "src": "/api/(.*)",        // Matches all API routes (e.g., /api/notes)
+      "dest": "/server.js"       // Routes API requests to server.js (Node.js function)
     },
     {
-      "src": "/(.*)",                          // Matches all static assets (React app)
-      "dest": "/client/build/$1"               // Serves static files from the React build
+      "src": "/(.*)",            // Matches all static files (React frontend)
+      "dest": "/client/build/$1" // Serve static files from the React build folder
     }
   ]
 }
