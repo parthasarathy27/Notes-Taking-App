@@ -2,30 +2,25 @@
   "version": 2,
   "builds": [
     {
-      "src": "server.js",
-      "use": "@vercel/node"
+      "src": "client/package.json",            // Points to the React frontend
+      "use": "@vercel/static-build",            // Uses the static build for React
+      "config": {
+        "distDir": "client/build"              // Specifies the build directory for React
+      }
     },
     {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "client/build"
-      }
+      "src": "server.js",                      // Points to the Express server
+      "use": "@vercel/node"                    // Uses the Node.js serverless function
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "server.js"
+      "src": "/api/(.*)",                      // Matches all API routes (e.g., /api/notes)
+      "dest": "/server.js"                     // Directs API routes to the serverless function (Node.js)
     },
     {
-      "src": "/(.*)",
-      "dest": "/client/$1"
+      "src": "/(.*)",                          // Matches all static assets (React app)
+      "dest": "/client/build/$1"               // Serves static files from the React build
     }
-  ],
-  "env": {
-    "MONGODB_URL": "@your_mongodb_url",
-    "NODE_ENV": "production",
-    "PORT": "5000"
-  }
+  ]
 }
