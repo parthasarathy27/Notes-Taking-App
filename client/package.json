@@ -6,19 +6,19 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.6.7",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.2",
-    "react-scripts": "5.0.1",
-    "timeago.js": "^4.0.2",
-    "web-vitals": "^2.1.4"
+    "axios": "^1.6.7",                    // For making HTTP requests to the backend
+    "react": "^18.2.0",                   // React library
+    "react-dom": "^18.2.0",               // React DOM library
+    "react-router-dom": "^6.22.2",        // React Router for client-side routing
+    "react-scripts": "5.0.1",             // React Scripts for running and building the app
+    "timeago.js": "^4.0.2",               // For time formatting (e.g., "2 hours ago")
+    "web-vitals": "^2.1.4"                // For web performance metrics
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-scripts start",       // Starts the React development server
+    "build": "react-scripts build",       // Builds the React app for production
+    "test": "react-scripts test",         // Runs tests using React Scripts
+    "eject": "react-scripts eject"        // Ejects the configuration (use cautiously)
   },
   "eslintConfig": {
     "extends": [
@@ -38,5 +38,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000/"
+  "proxy": "http://localhost:5000/"          // Proxy API requests to the Express server
 }
