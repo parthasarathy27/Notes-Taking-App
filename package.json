@@ -1,17 +1,17 @@
 {
   "name": "note-taking-app",
   "version": "1.0.0",
-  "description": "api server",
+  "description": "API server for a full-stack note-taking app",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "client": "cd client && npm run start",
-    "client-install": "cd client && npm install",
-    "server-install": "npm install",
-    "install-all": "concurrently \"npm run client-install\" \"npm run server-install\" ",
-    "dev": "concurrently \"npm run client\" \"npm run server\" ",
-    "postbuild": "cd client && npm install && npm run build"
+    "start": "node server.js",              // Runs the Node.js server in production
+    "server": "nodemon server.js",          // Runs the server with nodemon for development
+    "client": "cd client && npm run start",  // Starts the React client in development mode
+    "client-install": "cd client && npm install", // Installs client dependencies
+    "server-install": "npm install",        // Installs server dependencies
+    "install-all": "concurrently \"npm run client-install\" \"npm run server-install\" ", // Installs both client and server dependencies
+    "dev": "concurrently \"npm run client\" \"npm run server\" ", // Starts both the client and server simultaneously in dev mode
+    "postbuild": "cd client && npm install && npm run build" // Builds the React client and installs dependencies
   },
   "keywords": [],
   "author": "Parthasarathy",
@@ -28,7 +28,7 @@
     "react-router-dom": "^6.22.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0"  // For hot-reloading the server in development mode
   },
   "repository": {
     "type": "git",
