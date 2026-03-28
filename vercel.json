@@ -1,17 +1,25 @@
 {
   "version": 2,
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/:path*",
-      "destination": "/api/server"
+      "src": "/api/health",
+      "dest": "/api/server.js"
     },
     {
-      "source": "/users/:path*",
-      "destination": "/api/server"
+      "src": "/api/notes/(.*)",
+      "dest": "/api/server.js"
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/users/(.*)",
+      "dest": "/api/server.js"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
