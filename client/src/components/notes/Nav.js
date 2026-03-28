@@ -57,9 +57,9 @@ export default function Nav({ setIsLogin }) {
                     </Link>
                 </li>
                 <li className="logout-btn" onClick={logoutSubmit}>
-                    <a>
+                    <Link to="/">
                         <LogOut size={20} /> Logout
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </header>
