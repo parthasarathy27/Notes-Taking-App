@@ -13,18 +13,23 @@
       }
     }
   ],
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/index.js"
+      "src": "/users/(.*)",
+      "dest": "/api/index.js"
     },
     {
-      "source": "/users/(.*)",
-      "destination": "/api/index.js"
+      "src": "/api/notes/(.*)",
+      "dest": "/api/index.js"
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/(.*)",
+      "dest": "/$1",
+      "continue": true
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
