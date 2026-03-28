@@ -32,6 +32,14 @@ mongoose.connect(URL, {
     console.error('Error connecting to MongoDB:', err.message);
   });
 
+// Setup static file serving for production
+if (process.env.NODE_ENV === 'production' || process.env.VERCEL) {
+    app.use(express.static('client/build'));
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+    });
+}
+
 // listen Server
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {

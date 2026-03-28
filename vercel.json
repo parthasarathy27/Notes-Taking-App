@@ -5,15 +5,15 @@
   },
   "builds": [
     {
+      "src": "server.js",
+      "use": "@vercel/node"
+    },
+    {
       "src": "client/package.json",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "build"
       }
-    },
-    {
-      "src": "server.js",
-      "use": "@vercel/node"
     }
   ],
   "rewrites": [
@@ -26,16 +26,8 @@
       "destination": "/server.js"
     },
     {
-      "source": "/static/(.*)",
-      "destination": "/client/build/static/$1"
-    },
-    {
-      "source": "/([^/]*\\.[^/]+)",
-      "destination": "/client/build/$1"
-    },
-    {
       "source": "/(.*)",
-      "destination": "/client/build/index.html"
+      "destination": "/index.html"
     }
   ]
 }

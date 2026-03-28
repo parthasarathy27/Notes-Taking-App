@@ -11,6 +11,7 @@
     "server-install": "npm install",
     "install-all": "concurrently \"npm run client-install\" \"npm run server-install\" ",
     "dev": "concurrently \"npm run client\" \"npm run server\" ",
+    "build": "npm run install-all && npm run postbuild",
     "postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
