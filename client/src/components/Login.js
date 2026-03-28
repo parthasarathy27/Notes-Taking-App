@@ -48,8 +48,14 @@ export default function Login({ setIsLogin }) {
             });
             setUser({ name: '', email: '', password: '' });
             setErr(res.data.msg);
+            
+            // Auto login after successful registration
+            if(res.data.token) {
+                localStorage.setItem('tokenStore', res.data.token);
+                setIsLogin(true);
+            }
         } catch (err) {
-            err.response.data.msg && setErr(err.response.data.msg);
+            err.response && err.response.data.msg && setErr(err.response.data.msg);
         }
     }
 
@@ -64,7 +70,7 @@ export default function Login({ setIsLogin }) {
             localStorage.setItem('tokenStore', res.data.token);
             setIsLogin(true);
         } catch (err) {
-            err.response.data.msg && setErr(err.response.data.msg);
+            err.response && err.response.data.msg && setErr(err.response.data.msg);
         }
     }
 

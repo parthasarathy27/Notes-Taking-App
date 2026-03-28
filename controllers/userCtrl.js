@@ -16,7 +16,12 @@ const userCtrl = {
                 password: passwordHash
             })
             await newUser.save()
-            res.json({msg: "Sign up Success"})
+
+            // Generate token for auto-login
+            const payload = {id: newUser._id, name: newUser.username}
+            const token = jwt.sign(payload, process.env.TOKEN_SECRET, {expiresIn: "1d"})
+
+            res.json({msg: "Sign up Success", token})
         } catch (err) {
             return res.status(500).json({msg: err.message})
         }
