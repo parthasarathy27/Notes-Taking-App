@@ -33,7 +33,8 @@ mongoose.connect(URL, {
   });
 
 // Setup static file serving for production
-if (process.env.NODE_ENV === 'production' || process.env.VERCEL) {
+// On Vercel, static files are handled by the vercel.json rewrites
+if (process.env.NODE_ENV === 'production' && !process.env.VERCEL) {
     app.use(express.static('client/build'));
     app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
@@ -42,8 +43,11 @@ if (process.env.NODE_ENV === 'production' || process.env.VERCEL) {
 
 // listen Server
 const PORT = process.env.PORT || 5000
-app.listen(PORT, () => {
-    console.log('Server is running on port', PORT)
-})
+if (process.env.NODE_ENV !== 'test') {
+    app.listen(PORT, () => {
+        console.log('Server is running on port', PORT)
+    })
+}
 
 module.exports = app;
+
