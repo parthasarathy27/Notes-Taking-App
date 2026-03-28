@@ -1,5 +1,5 @@
 // Root server proxy for local development
-const app = require('./api/index');
+const app = require('./api/server');
 
 // listen Server
 const PORT = process.env.PORT || 5000

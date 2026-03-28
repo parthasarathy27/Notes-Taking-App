@@ -16,11 +16,9 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-// Health check to verify backend is reached
-app.use((req, res, next) => {
-    console.log(`Backend reached: ${req.method} ${req.url}`);
-    next();
-});
+// Health Check Routes
+app.get('/api/health', (req, res) => res.json({ status: 'ok', source: 'api' }));
+app.get('/users/health', (req, res) => res.json({ status: 'ok', source: 'users' }));
 
 // Routes
 app.use('/users', userRouter)
